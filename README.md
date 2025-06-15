@@ -22,7 +22,7 @@ $$\begin{cases}
 \frac{dz}{dt} = b + z(x - c)
 \end{cases}$$
 
-其中，$x$、$y$、$z$ 是系统的三个状态变量，$a$、$b$、$c$ 是系统参数。当参数取以下值时，系统表现出经典的混沌特性：
+其中，x、y、z 是系统的三个状态变量，a、b、c 是系统参数。当参数取以下值时，系统表现出经典的混沌特性：
 
 $$a = 0.2, \quad b = 0.2, \quad c = 5.7$$
 
@@ -67,11 +67,17 @@ $$f: \mathbb{R}^{3 \times T} \rightarrow \mathbb{R}^{3 \times H}$$
 
 混沌动力学系统的建模和预测一直是科学计算和机器学习领域的重要研究方向。近年来，随着深度学习技术的发展，越来越多的研究者开始探索使用神经网络[1]方法来处理这类复杂的非线性系统。Champion等人[2]研究首次提出了使用深度神经网络学习Koopman算子特征函数的方法，为非线性动力学系统的线性化表示提供了新的途径。作者证明了通过适当的坐标变换，可以将复杂的非线性系统转化为线性系统进行分析和预测。Genev等[3]人进一步发展了数据驱动的动力学发现方法，提出了SINDy（Sparse Identification of Nonlinear Dynamics）算法的改进版本，能够同时学习系统的坐标变换和控制方程。这是本次复现的核心论文，首次将Transformer架构应用于物理系统建模。作者提出了结合Koopman嵌入和Transformer的新方法，在多个动力学系统上取得了优异的预测性能。有研究[4]系统地介绍了Koopman算子理论在控制系统中的应用，为后续的机器学习方法提供了重要的理论基础。作者证明了Koopman算子方法在处理非线性控制问题方面的优势。Raissi等人[5]提出了物理信息神经网络（PINNs）的概念，通过在损失函数中引入物理约束，使神经网络能够学习满足物理定律的解。这一方法在科学计算领域产生了巨大影响。Pathak等人[6]的工作展示了储库计算（Reservoir Computing）在混沌系统预测方面的强大能力，特别是在Lorenz 96系统等高维混沌系统的建模方面取得了突破性进展。
 当前研究的主要挑战包括：1）如何在保证预测精度的同时维持系统的物理一致性；2）如何处理不同时间尺度的多尺度动力学；3）如何提高模型在分布外数据上的泛化能力；4）如何有效结合先验物理知识和数据驱动方法。这些挑战为未来的研究提供了重要方向。
+
 [1] Lusch B, Kutz J N, Brunton S L. Deep learning for universal linear embeddings of nonlinear dynamics[J]. Nature communications, 2018, 9(1): 4950.
+
 [2] Champion K, Lusch B, Kutz J N, et al. Data-driven discovery of coordinates and governing equations[J]. Proceedings of the National Academy of Sciences, 2019, 116(45): 22445-22451.
+
 [3] Geneva N, Zabaras N. Transformers for modeling physical systems[J]. Neural Networks, 2022, 146: 272-289.
+
 [4] Brunton S L, Brunton B W, Proctor J L, et al. Koopman invariant subspaces and finite linear representations of nonlinear dynamical systems for control[J]. PloS one, 2016, 11(2): e0150171.
+
 [5] Raissi M, Perdikaris P, Karniadakis G E. Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations[J]. Journal of Computational Physics, 2019, 378: 686-707.
+
 [6] Pathak J, Hunt B, Girvan M, et al. Model-free prediction of large spatiotemporally chaotic systems from data: A reservoir computing approach[J]. Physical review letters, 2018, 120(2): 024102.
 
 
